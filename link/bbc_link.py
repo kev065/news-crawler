@@ -28,7 +28,7 @@ class BBCLinkFetcher(DownloadLinkFetcher):
 
         links = list()
         # news links are the hrefs of a
-        elements = soup.table.find_all('a', class_='title-link')
+        elements = soup.table.find_all('a')
         for element in elements:
             link = self._format_link(element['href'])
             if self._link_filter(link, self.BBC_FILTERS):
